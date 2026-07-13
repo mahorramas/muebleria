@@ -35,8 +35,9 @@
         <div class="col-span-2 h-14 sticky top-0 z-50">
             @include('layouts.nav')
         </div>
-        <div class="col-span-2 border-t-4 border-gray-100">
+        <div class="col-span-2 border-t-4 border-gray-100 p-4">
             {{-- @yield('content') --}}
+            {{ $slot }}
         </div>
     </div>
 </body>
