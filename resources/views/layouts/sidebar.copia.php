@@ -34,10 +34,10 @@
         @php
             $salasOpen = request()->routeIs('salas.*');
         @endphp
-        <li class="px-2 flex flex-col gap-2" x-data="{ open: @js($salasOpen) }">
+        <li class="px-2 flex flex-col gap-2" x-data="{ open: @js($salasOpen) }" x-cloak>
             <x-nav-link href="{{ route('salas.index') }}" @click.prevent="open = !open"
                 :active="request()->routeIs('salas.index')" class="flex justify-between items-center py-2 px-2 rounded-md hover:bg-slate-200 transition-all
-                duration-200">
+                duration-200" x-cloak>
                 <div class="flex items-center gap-2">
                     <x-icon name="factory" class="text-gray-600" />
                     Salas
@@ -50,8 +50,8 @@
             <ul class="flex flex-col gap-2" x-show="open" x-transition:enter="transition ease-out duration-100"
                 x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
                 x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-90">
-                <li class="ml-6">
+                x-transition:leave-end="opacity-0 scale-90" x-cloak>
+                <li class="ml-6" x-cloak>
                     <x-nav-link href="{{ route('salas.areas') }}" :active="request()->routeIs('salas.areas')"
                         class="flex items-center gap-2 rounded px-4 py-1.5 hover:bg-slate-200">
                         Areas
